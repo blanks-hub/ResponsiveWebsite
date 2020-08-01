@@ -535,12 +535,12 @@ input[type=submit]:hover {
     text-align: left;
   }
 
-  .about-us__body > * {
+  .about-us__body>* {
     max-width: 27rem;
     margin-right: auto;
   }
 
-  .order-online > * {
+  .order-online>* {
     max-width: 70ch;
     margin-left: auto;
     margin-right: auto;
