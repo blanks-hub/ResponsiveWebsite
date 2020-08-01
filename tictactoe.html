@@ -8,28 +8,18 @@
   <link rel="stylesheet" href="css/tictactoe_style.css">
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="scripts/tictactoe_script.js"></script>
-  <script src="scripts/script.js"></script>
+  <script src="scripts/tictactoe_script.js" defer></script>
+  <script src="scripts/script.js" defer></script>
 
 </head>
 
 <body>
 
-  <div class="notification-bar">
-    <input id="hide" type="radio" name="bar" value="hide">
-    <input id="show" type="radio" name="bar" value="show" checked="checked">
-
-    <label for="hide">hide</label>
-    <label for="show">show</label>
-
-    <div class="notification-text"><a href="tictactoe.html">Click here for a 20% discount</a></div>
-  </div>
-
   <header class="nav-header">
 
     <div class="logo-section">
       <a href="index.html"><img class="logo-icon" src="img/index.png" alt="" aria-label="Personal Trainer"></a>
-      <h1 class="logo"><a href="index.html">POWER HEALTH Personal Training</a></h1>
+      <a href="index.html"><h1 class="logo">Power & Health Personal Training</h1></a>
     </div>
 
     <a href="#" class="toggle-button" onclick="toggleNav()">
@@ -40,20 +30,18 @@
     <nav id='nav'>
       <ul>
         <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="tictactoe.html">SALE</a></li>
+        <li><a class ="active-nav" href="tictactoe.html">Sale</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <h2 class="section-title text-primary">Play Tic Tac Toe against us to get 20% off our Products</h2>
-    <div class="grid">
-
-      <h1>TicTacToe</h1>
-
+    <h2 class="section-title text-primary">Play Tic Tac Toe against us to get 10% off our Products</h2>
+    <p></br>Click a field to start the game:</p>
+    <div class="page-container">
       <div class="game-container">
         <div class="field" id="topL"></div>
         <div class="field" id="topM"></div>
@@ -64,30 +52,19 @@
         <div class="field" id="bottomL"></div>
         <div class="field" id="bottomM"></div>
         <div class="field" id="bottomR"></div>
-        <div>
-        </div>
-        <button type="button" name="button" id="btn">Reset</button>
+      </div>
+      <div class="winning-message">
+        <div class="winning-message-text"></div>
+        <form id="mail" class="" action="index.html" method="post">
+          <input  type="text" name="" value="">
+        </form>
+        <button id="restart-btn" type="button" class="btn">Play again ;)</button>
       </div>
 
-      <div id="nav">
-        <div id="p1">
-          Player X
-        </div>
-      </div>
-      <div id=side>
-        <div id="p1">
-          Player O
-        </div>
-      </div>
-
-      <div id=footer>
-
-      </div>
-
+      <img src="img/braintrain.jpg" alt="" id="brain-img">
     </div>
+
   </main>
-
-
 
   <footer>
     <ul class="footer-nav">

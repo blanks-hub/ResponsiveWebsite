@@ -6,28 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="scripts/script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
+  <script src="scripts/script.js" defer></script>
   <title>Power Your Health - Contact</title>
   <link rel="shortcut icon" type="image/x-icon" href="img/index.png">
 </head>
 
 <body>
 
-  <div class="notification-bar">
-    <input id="hide" type="radio" name="bar" value="hide">
-    <input id="show" type="radio" name="bar" value="show" checked="checked">
-
-    <label for="hide">hide</label>
-    <label for="show">show</label>
-
-    <div class="notification-text"><a href="tictactoe.html">Click here for a 20% discount</a></div>
+  <div id="barwrap">
+    <div class="notification-bar">
+      <span id="text"><a href="tictactoe.html">Click here for a 20% discount!</a></span>
+      <span><img id="ok" src="img/cancel.svg" alt=""></span>
+    </div>
   </div>
 
   <header class="nav-header">
     <div class="logo-section">
       <a href="index.html"><img class="logo-icon" src="img/index.png" alt="" aria-label="Personal Trainer"></a>
-      <h1 class="logo"><a href="index.html">POWER HEALTH Personal Training</a></h1>
+      <a href="index.html"><h1 class="logo">Power & Health Personal Training</h1></a>
     </div>
 
     <a href="#" class="toggle-button" onclick="toggleNav()">
@@ -38,10 +35,10 @@
     <nav id='nav'>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
         <li><a href="products.html">Products</a></li>
-        <li><a href="tictactoe.html">SALE</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class ="active-nav" href="contact.html">Contact</a></li>
+        <li><a href="tictactoe.html">Sale</a></li>
       </ul>
     </nav>
   </header>
@@ -49,7 +46,7 @@
   <main>
     <section>
         <h2 class="section-title text-primary">Contact Us</h2>
-        <p></br>Swing by for a cup of coffee, or leave us a message:</p>
+        <p></br>Leave us a message:</p>
 
       <div class="contact-form">
 

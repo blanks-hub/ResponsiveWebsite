@@ -1,57 +1,146 @@
-
-.grid {
-  margin: 3em;
-  display: grid;
-  grid-template-areas:
-    "header header header"
-    "nav game side"
-    "footer footer footer"
+:root {
+  --field-size: 100px;
+  --player-size: calc(var(--field-size) * .9);
 }
 
-h1 {
-  grid-area: header;
-  text-align: center;
-}
-
-.game-container {
-  grid-area: game;
-  display: inline-grid;
-  grid-template-columns: 100px 100px 100px;
-  padding: 10px;
+.page-container {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+#brain-img {
+  width: 500px;
+  height: 375px;
+}
+
+/* The game will be displayed as a grid */
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 2rem;
 }
 
 .field {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 2px solid rgba(0, 0, 0);
+  border: 1px solid #000000;
   text-align: center;
-  height: 100px;
-  width: 100px;
+  height: var(--field-size);
+  width: var(--field-size);
   line-height: 100px;
   font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
-#btn {
-  margin: 10px;
-  padding: 20px;
-  font-size: 15px;
-  border-radius: 5px;
+/* Disabling the outside borders so that the grid looks nicer */
+.field:first-child,
+.field:nth-child(2),
+.field:nth-child(3) {
+  border-top: none;
 }
 
-#nav {
-  grid-area: nav;
-  font-size: 40px;
-  font-style: bold;
+.field:nth-child(3n + 1) {
+  border-left: none;
 }
 
-#side {
-  grid-area: side;
-  font-size: 40px;
-  font-style: bold;
-  text-align: right;
-
+.field:nth-child(3n) {
+  border-right: none;
 }
 
-#footer {
-  grid-area: footer;
+.field:nth-child(7),
+.field:nth-child(8),
+.field:last-child {
+  border-bottom: none;
+}
+
+/* Creating the X and the O Symbol and the hovering X effect*/
+.field.x,
+.field.o {
+  cursor: not-allowed;
+}
+
+.field.x::before,
+.field.x::after {
+  background-color: #000000;
+}
+
+.field:not(.x):not(.o):hover::before,
+.field:not(.x):not(.o):hover::after {
+  background-color: lightgrey;
+}
+
+.field.x::before,
+.field.x::after,
+.field:not(.x):not(.o):hover::before,
+.field:not(.x):not(.o):hover::after {
+  content: '';
+  position: absolute;
+  width: calc(var(--player-size) * .15);
+  height: var(--player-size);
+}
+
+.field.x::before,
+.field:hover:not(.x):not(.o)::before {
+  transform: rotate(45deg);
+}
+
+.field.x::after,
+.field:hover:not(.x):not(.o)::after {
+  transform: rotate(-45deg);
+}
+
+.field.o::before,
+.field.o::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.field.o::before {
+  width: var(--player-size);
+  height: var(--player-size);
+  background-color: #000000;
+}
+
+.field.o::after {
+  width: calc(var(--player-size) * .7);
+  height: calc(var(--player-size) * .7);
+  background-color: #fff;
+}
+
+.winning-message {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+}
+
+.winning-message.show {
+  display: flex;
+}
+
+.winning-message-text {
+  margin: 1rem;
+}
+
+@media only screen and (min-width: 1050px) {
+  .page-container {
+    flex-direction: row;
+  }
 }
