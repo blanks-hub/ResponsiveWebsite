@@ -32,10 +32,10 @@ $(document).ready(function() {
   function drawCheck() {
     // loops through the fieldarray and checks whether every field
     // has been marked
-    for(var i = 0; i < fields.length; i++) {
+    for (var i = 0; i < fields.length; i++) {
       var field = fields[i];
-      for(var j = 0; j < field.length; j++) {
-        if(field[j] == "X" || field[j] == "O");
+      for (var j = 0; j < field.length; j++) {
+        if (field[j] == "X" || field[j] == "O");
         else {
           return false;
         }
@@ -89,15 +89,14 @@ $(document).ready(function() {
     // selects a random field by generating a random index over
     // the .field class
     var len = $(".field").length;
-    var random = Math.floor( Math.random() * len );
+    var random = Math.floor(Math.random() * len);
     var randomField = $(".field").eq(random);
 
     // checks wether the field is already marked
     // if not recursive call
     if (!randomField.hasClass("x") && !randomField.hasClass("o")) {
       return randomField;
-    }
-    else {
+    } else {
       return generateRandomField();
     }
   }
@@ -111,21 +110,20 @@ $(document).ready(function() {
       $(this).addClass("x");
 
       // Adds the X to the fieldarray
-      setField($(this),"X");
+      setField($(this), "X");
 
       if (winCheck()) {
         $(".winning-message-text").text("Congratulations! Put in your E-Mail to get the discount code:");
         $("#mail").show();
         $(".winning-message").addClass("show");
         return;
-      }
-      else {
-          if(drawCheck()) {
-            $(".winning-message-text").text("Draw!");
-            $("#mail").hide();
-            $(".winning-message").addClass("show");
-            return;
-          }
+      } else {
+        if (drawCheck()) {
+          $(".winning-message-text").text("Draw!");
+          $("#mail").hide();
+          $(".winning-message").addClass("show");
+          return;
+        }
       }
 
       // Now the it's the PCs turn
@@ -141,13 +139,12 @@ $(document).ready(function() {
         $("#mail").hide();
         $(".winning-message").addClass("show");
         return;
-      }
-      else {
-        if(drawCheck()) {
-        $(".winning-message-text").text("Draw!");
-        $("#mail").hide();
-        $(".winning-message").addClass("show");
-        return;
+      } else {
+        if (drawCheck()) {
+          $(".winning-message-text").text("Draw!");
+          $("#mail").hide();
+          $(".winning-message").addClass("show");
+          return;
         }
       }
     }
