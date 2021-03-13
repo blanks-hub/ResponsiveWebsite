@@ -433,7 +433,7 @@ input[type=submit]:hover {
   }
 
   .logo:hover, .logo:focus {
-    box-shadow: 0px 0px 15px black;
+    box-shadow: 0px 0px 25px #A9A9A9;
   }
 
   .logo-section {
@@ -491,7 +491,7 @@ input[type=submit]:hover {
 
   .active-nav, nav a:hover, nav a:focus {
     color: white;
-    background-color: var(--clr-primary-dark);
+    background-color:  rgb(6, 126, 10, 0.6);
     box-shadow: 0px 0px 15px black;
   }
 

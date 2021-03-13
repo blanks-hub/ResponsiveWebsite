@@ -26,7 +26,6 @@ $(document).ready(function() {
     } else if (fields[2][0] == fields[1][1] && fields[2][0] == fields[0][2] && fields[2][0] != " ") {
       return true;
     }
-
   }
 
   function drawCheck() {
